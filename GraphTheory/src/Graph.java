@@ -17,12 +17,12 @@ public class Graph {
         this.trees = new ArrayList<Tree>();
     }
 
-    public void addNode(Vertex v) {
+    public void addVertex(Vertex v) {
         vertices.add(v);
     }
 
-    public void connectNodes(Vertex a, Vertex b, int weight) {
-        edges.add(new Edge(a, b, weight));
+    public void connectVertices(Vertex a, Vertex b, int weight) {
+        edges.add( new Edge(a, b, weight) );
     }
 
     public LinkedList<Vertex> getVertices() {

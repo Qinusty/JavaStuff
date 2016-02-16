@@ -9,7 +9,33 @@ public class Tree {
     private ArrayList<Edge> edges;
 
     public Tree(Vertex v) {
-        v.setTree(this);
+        this.vertices = new ArrayList<Vertex>();
+        this.edges = new ArrayList<Edge>();
+        vertices.add(v);
+    }
+
+    /**
+     * Adds a vertex to the tree.
+     * @param v
+     *      The vertex to be added.
+     */
+    public void addVertex(Vertex v) {
+        vertices.add(v);
+    }
+
+    /**
+     * Adds an edge to the tree. Also adds any vertices which are
+     * connected to the edge but not part of the tree.
+     * @param e
+     *      The edge to be added.
+     */
+    public void addEdge(Edge e) {
+        edges.add(e);
+        for (Vertex v : e.getVertices()) {
+            if (!vertices.contains(v)) {
+                vertices.add(v);
+            }
+        }
     }
 
     public void combine(Tree t) {
@@ -23,5 +49,18 @@ public class Tree {
 
     public ArrayList<Edge> getEdges() {
         return edges;
+    }
+
+    public String toString() {
+        int totalWeight = 0;
+        String retStr = "";
+        for (Edge e : edges) {
+            totalWeight += e.getWeight();
+        }
+
+        for (Edge e : edges) {
+            retStr += e.toString() + "\n";
+        }
+        return retStr + "Has a total weight of " + totalWeight + ".";
     }
 }

@@ -6,44 +6,25 @@ import java.util.List;
  */
 public class Vertex {
     // Instance Variables
-    private String name;
+    private char ID;
     private LinkedList<Edge> edges;
-    private Tree tree;
 
     /**
      * Constructor for the Vertex Class, creates a new object of type Vertex.
-     * @param name
+     * @param ID
      *      The string to represent the Vertex.
      */
-    public Vertex(String name) {
-        this.name = name;
+    public Vertex(char ID) {
+        this.ID = ID;
         this.edges = new LinkedList<Edge>();
     }
 
-    public String getName() {
-        return name;
+    public char getID() {
+        return ID;
     }
 
     public List<Edge> getEdges() {
         return edges;
-    }
-
-    /**
-     * Gets the tree that the vertex is part of.
-     * @return
-     *      Returns a tree object which the vertex is part of.
-     */
-    public Tree getTree() {
-        return tree;
-    }
-
-    /**
-     * Sets the tree that the vertex is part of.
-     * @param tree
-     *     Changes the value which represents which tree the Vertex is part of.
-     */
-    public void setTree(Tree tree) {
-        this.tree = tree;
     }
 
     /**
