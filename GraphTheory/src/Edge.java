@@ -33,6 +33,13 @@ public class Edge implements Comparable<Edge> {
         return weight;
     }
 
+    /**
+     * Compares the weight of this edge against anothers.
+     * @param e
+     *      The edge to compare against.
+     * @return
+     *      A usual comparable return value, -1 for this is less than, 0 for this is equal to and 1 for this is greater than.
+     */
     public int compareTo(Edge e) {
         if (this.weight < e.weight) {
             return -1;

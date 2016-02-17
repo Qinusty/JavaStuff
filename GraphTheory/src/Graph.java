@@ -17,12 +17,26 @@ public class Graph {
         this.trees = new ArrayList<Tree>();
     }
 
+    /**
+     * Adds a vertex to the list of vertices.
+     * @param v
+     *      The vertex to be added.
+     */
     public void addVertex(Vertex v) {
         vertices.add(v);
     }
 
+    /**
+     * Connects two Vertices via an edge which is created based on the weight provided.
+     * @param a
+     *      The starting vertex.
+     * @param b
+     *      The destination vertex.
+     * @param weight
+     *      The weight to be given to the edge connecting the two vertices.
+     */
     public void connectVertices(Vertex a, Vertex b, int weight) {
-        edges.add( new Edge(a, b, weight) );
+        edges.add(new Edge(a, b, weight));
     }
 
     public LinkedList<Vertex> getVertices() {
@@ -38,6 +52,28 @@ public class Graph {
     }
 
     //******************** Static Methods ****************//
+
+    /**
+     * Takes a file path and returns a graph if the file was a valid graph definition.
+     * A Valid file is a .csv file with the format
+     *
+     * A,B,10
+     * A,C,4
+     * B,D,6
+     *
+     * Which  represents a table as follows:
+     *
+     * | Vertex | Vertex | Weight |
+     * |--------|--------|--------|
+     * |    A   |   B    |   10   |
+     * |    A   |   C    |    4   |
+     * |    B   |   D    |    6   |
+     *
+     * @param path
+     *      File path to try and interpret
+     * @return
+     *      A graph based on the files contents.
+     */
     public static Graph graphFromFile(Path path) {
         Graph g = new Graph();
         // import from a txt file etc...
