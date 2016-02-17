@@ -19,8 +19,9 @@ public class Tree {
      * @param v
      *      The vertex to be added.
      */
-    public void addVertex(Vertex v) {
+    public void connectVertex(Vertex v, Edge e) {
         vertices.add(v);
+        edges.add(e);
     }
 
     /**
@@ -38,9 +39,10 @@ public class Tree {
         }
     }
 
-    public void combine(Tree t) {
+    public void combine(Tree t, Edge e) {
         this.vertices.addAll(t.getVertices());
         this.edges.addAll(t.getEdges());
+        this.edges.add(e);
     }
 
     public ArrayList<Vertex> getVertices() {

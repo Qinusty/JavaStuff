@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Created by qinusty on 16/02/16.
@@ -43,5 +44,6 @@ public class Edge implements Comparable<Edge> {
     public String toString() {
         return vertices.get(0).getID() + "->" + vertices.get(1).getID() + " : " + weight;
     }
+
 
 }
