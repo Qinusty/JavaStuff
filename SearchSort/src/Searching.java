@@ -13,7 +13,7 @@ public class Searching {
      *      An integer value representing the index of the value within the list.
      *      Or -1 if the value is not found.
      */
-    public int Linear(int value, int[] list) {
+    public static int Linear(int value, int[] list) {
         int i = 0;
         for (int x : list) {
             if (x == value) {
@@ -24,5 +24,5 @@ public class Searching {
         // Not found anything? return -1
         return -1;
     }
-    
+
 }
