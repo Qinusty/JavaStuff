@@ -4,6 +4,7 @@
 ### Search
 1. ~~Linear Search~~
 2. Binary Search
+
 ### Sort
 1. ~~Bubble Sort~~
 2. Insertion Sort
