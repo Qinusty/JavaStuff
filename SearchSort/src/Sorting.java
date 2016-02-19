@@ -24,4 +24,18 @@ public class Sorting {
         }while (swapped);
         return list;
     }
+
+    public static int[] Insertion(int[] list) {
+        int j;
+        for (int i = 1; i < list.length; i++) {
+            j = i;
+            while (j > 0 && list[j-1] > list[j]) {
+                int tmp = list[j-1];
+                list[j-1] = list[j];
+                list[j] = tmp;
+                j --;
+            }
+        }
+        return list;
+    }
 }
