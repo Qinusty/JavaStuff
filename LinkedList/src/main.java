@@ -8,9 +8,14 @@ public class main {
         list.addNode(10);
         list.addNode(12);
         list.addNode(3);
+        list.addNode(3.14159);
 
         System.out.println(list.contains(12));
         list.printList();
+
+
     }
+
+
 
 }

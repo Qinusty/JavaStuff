@@ -9,7 +9,12 @@ public class LinkedList {
         head = null;
     }
 
-    public void addNode(int data) {
+
+    /**
+     * Adds a node to the current data structure
+     * @param data integer to be added
+     */
+    public void addNode(Comparable data) {
         if (head == null) {
             head = new Node(data);
         } else {
@@ -21,7 +26,7 @@ public class LinkedList {
         }
     }
 
-    public boolean contains(int search) {
+    public boolean contains(Comparable search) {
         Node curNode = head;
         while (curNode != null && curNode.getData() != search) {
             curNode = curNode.getNext();
@@ -41,4 +46,47 @@ public class LinkedList {
             curNode = curNode.getNext();
         }
     }
+
+
+
+    /**
+     * Created by qinusty on 08/02/16.
+     * Edited by SirSharpest on 22/02/16
+     */
+    private class Node implements Comparable<Node>{
+
+        private Comparable data;
+        private Node next;
+
+        public Node(Comparable i) {
+            data = i;
+        }
+        public Node getNext() {
+            return next;
+        }
+        public void setNext(Node n) {
+            next = n;
+        }
+        public Comparable getData() {
+            return data;
+        }
+        public void setData(Comparable d) {
+            data = d;
+        }
+
+        /**
+         * Returns 0 if equal
+         * positive if greater than
+         * negative if less than
+         * @param o node to check against
+         * @return evaluation of node
+         * @Override
+         */
+        public int compareTo(Node o) {
+            return this.data.compareTo(o.data);
+        }
+    }
+
+
+
 }
